@@ -1,5 +1,5 @@
 let gameBoard = (() => {
-    squares = [
+    let squares = [
         "", "", "",
         "", "", "",
         "", "", "",
