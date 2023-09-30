@@ -6,12 +6,17 @@ let gameBoard = (() => {
     ];
     let emptySquares = squares.length;
 
+    const showGameResult = () => {
+        let gameResultDialog = document.getElementById("game-result-popup");
+        gameResultDialog.showModal();
+    };
+
     const getAllSquares = () => squares;
     const tickASquare = (idx, value) => {
         squares[idx] = value;
         emptySquares--;
         if (emptySquares === 0) {
-            alert("Gamer Over!");
+            showGameResult();
         }
     }
 
