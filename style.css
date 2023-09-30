@@ -1,0 +1,33 @@
+body {
+    background-color: #999;
+}
+
+.banner {
+    display: flex;    
+    justify-content: center;
+
+    padding: 2rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: #fff;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.game-board-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #646262;
+    border: 0.1px solid #b9b9b9;
+}
