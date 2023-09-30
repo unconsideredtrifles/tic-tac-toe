@@ -4,8 +4,16 @@ let gameBoard = (() => {
         "", "", "",
         "", "", "",
     ];
+    let emptySquares = squares.length;
 
     const getAllSquares = () => squares;
+    const tickASquare = (idx, value) => {
+        squares[idx] = value;
+        emptySquares--;
+        if (emptySquares === 0) {
+            alert("Gamer Over!");
+        }
+    }
 
     return {
         getAllSquares,
@@ -19,9 +27,9 @@ let gameBoardUI = ((gameBoard) => {
     let squaresUI = ticTacToeBoard.children;
 
     const renderEachSquare = (squareIndex, ticTacToeMark) => {
-        gameBoardSquares[squareIndex] = ticTacToeMark;
+        gameBoard.tickASquare(squareIndex, ticTacToeMark);
         squaresUI[squareIndex].textContent = ticTacToeMark;
-    }
+    };
 
     const render = () => {
         let currentSquareIndex = 0;
