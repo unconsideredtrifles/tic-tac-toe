@@ -17,6 +17,7 @@ let gameBoard = (() => {
 
     return {
         getAllSquares,
+        tickASquare,
     };
 })();
 
