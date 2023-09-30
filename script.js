@@ -28,8 +28,8 @@ let gameBoardUI = ((gameBoard) => {
     let squaresUI = ticTacToeBoard.children;
 
     const renderEachSquare = (squareIndex, ticTacToeMark) => {
-        gameBoard.tickASquare(squareIndex, ticTacToeMark);
         squaresUI[squareIndex].textContent = ticTacToeMark;
+        gameBoard.tickASquare(squareIndex, ticTacToeMark);
     };
 
     const render = () => {
