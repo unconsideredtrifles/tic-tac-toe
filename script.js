@@ -134,21 +134,28 @@ let currentPlayer = ((allPlayers) => {
 })(players);
 
 
-let gameBoardSquares = document.getElementsByClassName("game-board-square");
-Array.from(gameBoardSquares).forEach((eachSquare) => {
-    eachSquare.addEventListener("click", function () {
-        if(this.textContent != "") {
-            return;
-        }
-        let currentSquareIndex = Number(this.getAttribute("data-index"));
-        gameBoardUI.renderEachSquare(
-            currentSquareIndex,
-            currentPlayer.getMark(),
-        );
-        currentPlayer.changePlayer();
+(() => {
+    let gameBoardSquares = document.getElementsByClassName("game-board-square");
+    Array.from(gameBoardSquares).forEach((eachSquare) => {
+        eachSquare.addEventListener("click", function () {
+            if(this.textContent != "") {
+                return;
+            }
+            let currentSquareIndex = Number(this.getAttribute("data-index"));
+            gameBoardUI.renderEachSquare(
+                currentSquareIndex,
+                currentPlayer.getMark(),
+            );
+            currentPlayer.changePlayer();
+        });
     });
-})
+})();
 
 
-
-
+(() => {
+    let gameRestartBtn = document.getElementById("restart-game");
+    gameRestartBtn.addEventListener("click", () => {
+        gameBoard.resetGameBoard();
+        gameBoardUI.render();
+    });
+})();
