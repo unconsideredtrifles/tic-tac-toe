@@ -108,21 +108,21 @@ let Player = (name, mark) => {
 };
 
 
-const players = [Player("Player 1", "O"), Player("Player 2", "X")];
-
-let currentPlayer = ((allPlayers) => {
+let currentPlayer = (() => {
+    const players = [Player("Player 1", "O"), Player("Player 2", "X")];
     let currentPlayerIndex = 0;
-    let player = allPlayers[currentPlayerIndex];
+    let player = players[currentPlayerIndex];
+
 
     const getName = () => player.getName();
     const getMark = () => player.getMark();
     const changePlayer = () => {
-        if(currentPlayerIndex >= allPlayers.length - 1) {
+        if(currentPlayerIndex >= players.length - 1) {
             currentPlayerIndex = 0;
         } else {
             currentPlayerIndex++;
         }
-        player = allPlayers[currentPlayerIndex];
+        player = players[currentPlayerIndex];
     };
 
     return {
@@ -131,7 +131,7 @@ let currentPlayer = ((allPlayers) => {
         changePlayer,
     }
 
-})(players);
+})();
 
 
 (() => {
