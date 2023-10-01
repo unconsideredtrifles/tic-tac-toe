@@ -26,7 +26,7 @@ body {
     gap: 4rem;
 
     width: 40%;
-    padding: 1rem;
+    padding: 0.6rem 1rem;
     margin: 0 auto 0.8rem auto;
 
     background-color: #fff;
@@ -34,36 +34,37 @@ body {
 
 .player-info {
     flex: 1;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .player-name {
     display: flex;
     border-radius: 12px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #fff;
     background-color: #a19ce6;
 }
 
+.player-name > * {
+    padding: 0.3rem 1rem;
+}
+
 .player-real-name {
     flex: 1;
-    padding: 1rem;
     text-align: center;
     letter-spacing: 0.05rem;
 }
 
 .name-edit-btn {
-    width: 1.5rem;
+    width: 1.2rem;
     fill: #fff;
     vertical-align: text-top
 }
 
 .player-mark {
-    padding: 1rem;
     border-radius: 0 12px 12px 0;
     background-color: #7a7a7a;
 }
-
 
 .player-score {
     display: flex;
@@ -73,25 +74,27 @@ body {
     background-color: #999;
 }
 
+.player-score > * {
+    padding: 0.3rem 1rem;
+}
+
 .score-icon {
-    width: 1.5rem;
+    width: 1.2rem;
     fill: #fff;
     border-radius: 12px 0 0 12px;
-    padding: 1rem;
     background-color: #222;
 }
 
 .win-count {
     flex: 1 1 auto;
     text-align: center;
-    padding: 1rem;
 }
 
 #game-menu {
     display: flex;
     justify-content: center;
     width: 40%;
-    margin: 0 auto 1.5rem auto;
+    margin: 1.2rem auto 0.8rem auto;
 }
 
 #restart-game {
