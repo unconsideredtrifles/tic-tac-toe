@@ -21,14 +21,14 @@ let gameBoard = (() => {
         gameResultDialog.showModal();
     };
 
-    const checkIfWinIdx = (idx) => (squares[idx] === currentPlayer.getMark());
+    const checkIfWinIdx = (idx) => (squares[idx] === allPlayers.getCurrentPlayer().getMark());
 
     const checkGameResult = (idx, value) => {
        let winningPositions = allWinningPositions[idx];
        let i = 0;
        while(i < winningPositions.length) {
         if(checkIfWinIdx(winningPositions[i]) && checkIfWinIdx(winningPositions[i + 1])) {
-            showGameResult(`${currentPlayer.getName()} wins!`);
+            showGameResult(`${allPlayers.getCurrentPlayer().getName()} wins!`);
             break;
         } else if (emptySquares === 1) {
             showGameResult("It's a draw!");
@@ -108,14 +108,14 @@ let Player = (name, mark) => {
 };
 
 
-let currentPlayer = (() => {
+let allPlayers = (() => {
     const players = [Player("Player 1", "O"), Player("Player 2", "X")];
     let currentPlayerIndex = 0;
     let player = players[currentPlayerIndex];
 
 
-    const getName = () => player.getName();
-    const getMark = () => player.getMark();
+    const getCurrentPlayer = () => player;
+
     const changePlayer = () => {
         if(currentPlayerIndex >= players.length - 1) {
             currentPlayerIndex = 0;
@@ -126,8 +126,7 @@ let currentPlayer = (() => {
     };
 
     return {
-        getName,
-        getMark,
+        getCurrentPlayer,
         changePlayer,
     }
 
@@ -144,9 +143,9 @@ let currentPlayer = (() => {
             let currentSquareIndex = Number(this.getAttribute("data-index"));
             gameBoardUI.renderEachSquare(
                 currentSquareIndex,
-                currentPlayer.getMark(),
+                allPlayers.getCurrentPlayer().getMark(),
             );
-            currentPlayer.changePlayer();
+            allPlayers.changePlayer();
         });
     });
 })();
