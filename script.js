@@ -159,3 +159,31 @@ let currentPlayer = (() => {
         gameBoardUI.render();
     });
 })();
+
+
+(() => {
+    let nameEditBtns = document.getElementsByClassName("name-edit-btn");
+    Array.from(nameEditBtns).forEach((eachBtn) => {
+        eachBtn.addEventListener("click", function() {
+            let playerName = this.parentElement.getElementsByClassName("player-name-text")[0];
+            playerName.setAttribute("contenteditable", "true");
+            playerName.focus();
+        });
+    });
+})();
+
+
+(() => {
+    let playerNames = document.getElementsByClassName("player-name-text");
+    Array.from(playerNames).forEach((eachPlayer) => {
+        eachPlayer.addEventListener("keydown", function(e) {
+            console.log(e.target.textContent.length);
+            if(e.key != "Backspace" && e.target.textContent.length > 13) {
+                e.preventDefault();
+            }
+            if(e.key === "Enter") {
+                e.target.removeAttribute("contenteditable");
+            }
+        });
+    });
+})();
