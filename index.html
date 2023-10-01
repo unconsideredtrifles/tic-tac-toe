@@ -8,7 +8,42 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <header class="banner">Tic Tac Toe</header>
+    <header class="banner">
+        <svg class="banner-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>spa-outline</title><path d="M15.5,9.63C14.21,10.32 13.03,11.2 12,12.26C10.97,11.19 9.79,10.31 8.5,9.63C8.74,6.86 9.92,4.14 12.06,2C14.18,4.12 15.31,6.84 15.5,9.63M12,15.45C14.15,12.17 17.82,10 22,10C22,20 12.68,21.88 12,22C11.32,21.89 2,20 2,10C6.18,10 9.85,12.17 12,15.45M12.05,5.19C11.39,6.23 10.93,7.38 10.68,8.58L12,9.55L13.35,8.57C13.12,7.37 12.68,6.22 12.05,5.19M12,19.97C12,19.97 18,19 19.74,12.25C14,14 12,19.1 12,19.1C12,19.1 9,13 4.26,12.26C6,19 12,19.97 12,19.97Z" /></svg>
+        <div class="banner-text">Tic Tac Toe</div>
+        <svg class="banner-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>spa-outline</title><path d="M15.5,9.63C14.21,10.32 13.03,11.2 12,12.26C10.97,11.19 9.79,10.31 8.5,9.63C8.74,6.86 9.92,4.14 12.06,2C14.18,4.12 15.31,6.84 15.5,9.63M12,15.45C14.15,12.17 17.82,10 22,10C22,20 12.68,21.88 12,22C11.32,21.89 2,20 2,10C6.18,10 9.85,12.17 12,15.45M12.05,5.19C11.39,6.23 10.93,7.38 10.68,8.58L12,9.55L13.35,8.57C13.12,7.37 12.68,6.22 12.05,5.19M12,19.97C12,19.97 18,19 19.74,12.25C14,14 12,19.1 12,19.1C12,19.1 9,13 4.26,12.26C6,19 12,19.97 12,19.97Z" /></svg>
+    </header>
+    <div id="scoreboard">
+        <div class="player-info">
+            <div class="player-name">
+                <div class="player-real-name">
+                    <svg class="name-edit-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>square-edit-outline</title><path d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" /></svg>
+                    Player One
+                </div>
+                <div class="player-mark">O</div>
+            </div>
+            <div class="player-score">
+                <svg class="score-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trophy</title><path d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M20 11H18V4H20V11Z" /></svg>
+                <div class="win-count">0 Win(s)</div>
+            </div>
+        </div>
+        <div class="player-info">
+            <div class="player-name">
+                <div class="player-real-name">
+                    <svg class="name-edit-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>square-edit-outline</title><path d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" /></svg>
+                    Player Two
+                </div>
+                <div class="player-mark">X</div>
+            </div>
+            <div class="player-score">
+                <svg class="score-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trophy</title><path d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M20 11H18V4H20V11Z" /></svg>
+                <div class="win-count">0 Win(s)</div>
+            </div>
+        </div>
+    </div>
+    <div id="game-menu">
+        <button id="restart-game">Restart Game</button>
+    </div>
     <div id="game-board">
         <div data-index="0" class="game-board-square"></div>
         <div data-index="1" class="game-board-square"></div>

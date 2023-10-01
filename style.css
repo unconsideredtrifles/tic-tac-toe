@@ -6,10 +6,101 @@ body {
     display: flex;    
     justify-content: center;
 
-    padding: 2rem;
+    padding: 2rem 2rem 1.2rem 2rem;
     margin-bottom: 1rem;
     font-size: 3rem;
     color: #fff;
+}
+
+.banner-icon {
+    width: 3rem;
+    fill: #fff;
+}
+
+.banner-text {
+    margin: 0 1.5rem;
+}
+
+#scoreboard {
+    display: flex;
+    gap: 4rem;
+
+    width: 40%;
+    padding: 1rem;
+    margin: 0 auto 0.8rem auto;
+
+    background-color: #fff;
+}
+
+.player-info {
+    flex: 1;
+    font-size: 1.3rem;
+}
+
+.player-name {
+    display: flex;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    color: #fff;
+    background-color: #a19ce6;
+}
+
+.player-real-name {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.name-edit-btn {
+    width: 1.5rem;
+    fill: #fff;
+    vertical-align: text-top
+}
+
+.player-mark {
+    padding: 1rem;
+    border-radius: 0 12px 12px 0;
+    background-color: #7a7a7a;
+}
+
+
+.player-score {
+    display: flex;
+    border-radius: 12px;
+
+    color: #fff;
+    background-color: #999;
+}
+
+.score-icon {
+    width: 1.5rem;
+    fill: #fff;
+    border-radius: 12px 0 0 12px;
+    padding: 1rem;
+    background-color: #222;
+}
+
+.win-count {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+#game-menu {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto 1.5rem auto;
+}
+
+#restart-game {
+    border: none;
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    background-color: #373737;
+    font-size: 1.2rem;
 }
 
 #game-board {
