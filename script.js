@@ -95,14 +95,23 @@ let Player = (name, mark) => {
     let gamesWon = 0;
 
     const getName = () => playerName;
+    const changeName = (name) => {
+        playerName = name;
+    };
     const getMark = () => playerMark;
     const playGame = () => ++totalGamesPlayed;
-    const winGame = () => ++gamesWin;  
+    const winGame = () => {
+        gamesWon++;
+        scoreBoard.updateCurrentPlayerScore();
+        return gamesWon;
+    };
+
     const getTotalGamesPlayed = () => totalGamesPlayed;
     const getGamesWon = () => gamesWon;
 
     return {
         getName,
+        changeName,
         getMark,
         getGamesWon,
         getTotalGamesPlayed,
