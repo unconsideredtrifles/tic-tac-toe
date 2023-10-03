@@ -24,17 +24,21 @@ let gameBoard = (() => {
     const checkIfWinIdx = (idx) => (squares[idx] === allPlayers.getCurrentPlayer().getMark());
 
     const checkGameResult = (idx, value) => {
-       let winningPositions = allWinningPositions[idx];
-       let i = 0;
-       while(i < winningPositions.length) {
-        if(checkIfWinIdx(winningPositions[i]) && checkIfWinIdx(winningPositions[i + 1])) {
-            showGameResult(`${allPlayers.getCurrentPlayer().getName()} wins!`);
-            break;
-        } else if (emptySquares === 1) {
-            showGameResult("It's a draw!");
+        let currentPlayer = allPlayers.getCurrentPlayer();
+        let winningPositions = allWinningPositions[idx];
+        let i = 0;
+
+        currentPlayer.playGame();
+        while(i < winningPositions.length) {
+            if(checkIfWinIdx(winningPositions[i]) && checkIfWinIdx(winningPositions[i + 1])) {
+                showGameResult(`${currentPlayer.getName()} wins!`);
+                currentPlayer.winGame();
+                break;
+            } else if (emptySquares === 1) {
+                showGameResult("It's a draw!");
+            }
+            i += 2;
         }
-        i += 2;
-       }
     };
 
     const tickASquare = (idx, value) => {
