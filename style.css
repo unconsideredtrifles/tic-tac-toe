@@ -32,12 +32,12 @@ body {
     background-color: #fff;
 }
 
-.player-info {
+.player-info-wrapper {
     flex: 1;
     font-size: 1.1rem;
 }
 
-.player-name {
+.player-info {
     display: flex;
     border-radius: 12px;
     margin-bottom: 0.5rem;
@@ -45,11 +45,11 @@ body {
     background-color: #a19ce6;
 }
 
-.player-name > * {
+.player-info > * {
     padding: 0.3rem 1rem;
 }
 
-.player-real-name {
+.player-name {
     flex: 1;
     text-align: center;
     letter-spacing: 0.05rem;

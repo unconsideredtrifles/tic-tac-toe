@@ -151,10 +151,10 @@ let scoreBoard = (() => {
         let currentPlayer = allPlayers.getCurrentPlayer();
         let players = allPlayers.get();
 
-        let playerIndex = players.findIndex(eachPlayer => {
+        let playerIdx = players.findIndex(eachPlayer => {
             return eachPlayer === currentPlayer;
         });
-        let selector = `.player-info[data-player-index='${playerIndex}']`
+        let selector = `.player-info-wrapper[data-player-index='${playerIdx}']`;
 
         let playerInfo = document.querySelector(selector);
         let win = playerInfo.getElementsByClassName("win-count")[0];
@@ -231,10 +231,10 @@ let scoreBoard = (() => {
 
 
 (() => {
-    allPlayers.get().forEach((eachPlayer, playerIndex) => {
+    allPlayers.get().forEach((eachPlayer, playerIdx) => {
         let playerName = eachPlayer.getName();
         let playerMark = eachPlayer.getMark();
-        let selector = `.player-info[data-player-index='${playerIndex}']`;
+        let selector = `.player-info-wrapper[data-player-index='${playerIdx}']`;
 
         let playerInfo = document.querySelector(selector);
         let name = playerInfo.getElementsByClassName("player-name-text")[0];
