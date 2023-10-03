@@ -119,7 +119,7 @@ let allPlayers = (() => {
 
 
     const getCurrentPlayer = () => player;
-
+    const get = () => players.slice(0);
     const changePlayer = () => {
         if(currentPlayerIndex >= players.length - 1) {
             currentPlayerIndex = 0;
@@ -131,9 +131,31 @@ let allPlayers = (() => {
 
     return {
         getCurrentPlayer,
+        get,
         changePlayer,
     }
 
+})();
+
+let scoreBoard = (() => {
+    const updateCurrentPlayerScore = () => {
+        let currentPlayer = allPlayers.getCurrentPlayer();
+        let players = allPlayers.get();
+
+        let playerIndex = players.findIndex(eachPlayer => {
+            return eachPlayer === currentPlayer;
+        });
+        let selector = `.player-info[data-player-index='${playerIndex}']`
+
+        let playerInfo = document.querySelector(selector);
+        let win = playerInfo.getElementsByClassName("win-count")[0];
+
+        win.textContent = `${currentPlayer.getGamesWon()} Win(s)`;
+    };
+
+    return {
+        updateCurrentPlayerScore,
+    };
 })();
 
 
