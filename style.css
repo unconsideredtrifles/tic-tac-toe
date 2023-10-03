@@ -43,10 +43,8 @@ body {
 
 .player-info {
     display: flex;
-    border-radius: 12px;
     margin-bottom: 0.5rem;
     color: #fff;
-    background-color: #a19ce6;
 }
 
 .player-info > * {
@@ -55,8 +53,10 @@ body {
 
 .player-name {
     flex: 1;
+    border-radius: 12px 0 0 12px;
     text-align: center;
     letter-spacing: 0.05rem;
+    background-color: #a19ce6;
 }
 
 .player-name-highlight {
