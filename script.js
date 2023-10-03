@@ -218,7 +218,13 @@ let scoreBoard = (() => {
                 e.preventDefault();
             }
             if(e.key === "Enter") {
-                e.target.removeAttribute("contenteditable");
+                let players = allPlayers.get();
+                let playerInfo = this.parentElement.parentElement.parentElement;
+                let playerIndex = +playerInfo.getAttribute("data-player-index");
+
+                let playerToChange = players[playerIndex];
+                playerToChange.changeName(this.textContent);
+                this.removeAttribute("contenteditable");
             }
         });
     });
