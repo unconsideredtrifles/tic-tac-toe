@@ -126,6 +126,27 @@ let allPlayers = (() => {
     let currentPlayerIndex = 0;
     let player = players[currentPlayerIndex];
 
+    const highlightCurrentPlayer = () => {
+        let nameHighlight = "player-name-highlight";
+        let markHighlight = "player-mark-highlight";
+        let playerIdx = currentPlayerIndex;
+
+        // clean up leftover class names from previous player
+        let prevName = document.getElementsByClassName(nameHighlight)[0];
+        let prevMark = document.getElementsByClassName(markHighlight)[0];
+        if(prevName && prevMark) {
+            prevName.classList.remove(nameHighlight);
+            prevMark.classList.remove(markHighlight);
+        }
+
+        let selector = `.player-info-wrapper[data-player-index="${playerIdx}"]`;
+        let playerInfo = document.querySelector(selector);
+        let playerName = playerInfo.getElementsByClassName("player-name")[0];
+        let playerMark = playerInfo.getElementsByClassName("player-mark")[0];
+
+        playerName.classList.add(nameHighlight);
+        playerMark.classList.add(markHighlight);
+    }
 
     const getCurrentPlayer = () => player;
     const get = () => players.slice(0);
@@ -140,6 +161,7 @@ let allPlayers = (() => {
 
     return {
         getCurrentPlayer,
+        highlightCurrentPlayer,
         get,
         changePlayer,
     }
@@ -181,6 +203,7 @@ let scoreBoard = (() => {
                 allPlayers.getCurrentPlayer().getMark(),
             );
             allPlayers.changePlayer();
+            allPlayers.highlightCurrentPlayer();
         });
     });
 })();
@@ -243,6 +266,7 @@ let scoreBoard = (() => {
         name.textContent = playerName;
         mark.textContent = playerMark;
     });
+    allPlayers.highlightCurrentPlayer();
 })();
 
 (() => {

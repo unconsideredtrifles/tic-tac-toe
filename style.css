@@ -59,6 +59,10 @@ body {
     letter-spacing: 0.05rem;
 }
 
+.player-name-highlight {
+    background-color: #35fe3f;
+}
+
 .name-edit-btn {
     width: 1.2rem;
     fill: #fff;
@@ -69,6 +73,10 @@ body {
 .player-mark {
     border-radius: 0 12px 12px 0;
     background-color: #7a7a7a;
+}
+
+.player-mark-highlight {
+    background-color: #bd2121;
 }
 
 .player-score {
