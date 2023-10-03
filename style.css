@@ -2,6 +2,10 @@ body {
     background-color: #999;
 }
 
+.box-shadow-effect {
+    box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.20);
+}
+
 .banner {
     display: flex;    
     justify-content: center;
@@ -134,7 +138,6 @@ body {
     width: 28%;
     height: 15%;
     padding: 0.4rem 0.1rem;
-    box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.20);
 
     color: #fff;
     background-color: #434141;
