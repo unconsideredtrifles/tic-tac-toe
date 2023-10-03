@@ -221,3 +221,27 @@ let scoreBoard = (() => {
         });
     });
 })();
+
+
+(() => {
+    allPlayers.get().forEach((eachPlayer, playerIndex) => {
+        let playerName = eachPlayer.getName();
+        let playerMark = eachPlayer.getMark();
+        let selector = `.player-info[data-player-index='${playerIndex}']`;
+
+        let playerInfo = document.querySelector(selector);
+        let name = playerInfo.getElementsByClassName("player-name-text")[0];
+        let mark = playerInfo.getElementsByClassName("player-mark")[0];
+
+        name.textContent = playerName;
+        mark.textContent = playerMark;
+    });
+})();
+
+(() => {
+    let gameResultDialog = document.getElementById("game-result-popup");
+    gameResultDialog.addEventListener("close", () => {
+        gameBoard.resetGameBoard();
+        gameBoardUI.render();
+    });
+})();
