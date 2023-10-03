@@ -199,7 +199,9 @@ let scoreBoard = (() => {
     let nameEditBtns = document.getElementsByClassName("name-edit-btn");
     Array.from(nameEditBtns).forEach((eachBtn) => {
         eachBtn.addEventListener("click", function() {
-            let playerName = this.parentElement.getElementsByClassName("player-name-text")[0];
+            let parent = this.parentElement;
+            let playerNames = parent.getElementsByClassName("player-name-text");
+            let playerName = playerNames[0];
             playerName.setAttribute("contenteditable", "true");
             playerName.focus();
         });
