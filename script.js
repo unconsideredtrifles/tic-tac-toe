@@ -54,6 +54,8 @@ let gameBoard = (() => {
             "", "", "",
         ];
         emptySquares = squares.length;
+        allPlayers.resetPlayerTracking();
+        allPlayers.highlightCurrentPlayer();
     }
 
     return {
@@ -158,12 +160,17 @@ let allPlayers = (() => {
         }
         player = players[currentPlayerIndex];
     };
+    const resetPlayerTracking = () => {
+        currentPlayerIndex = 0;
+        player = players[currentPlayerIndex];
+    }
 
     return {
         getCurrentPlayer,
         highlightCurrentPlayer,
         get,
         changePlayer,
+        resetPlayerTracking,
     }
 
 })();
