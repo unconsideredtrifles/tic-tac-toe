@@ -230,6 +230,9 @@ let scoreBoard = (() => {
     Array.from(nameEditBtns).forEach((eachBtn) => {
         eachBtn.addEventListener("click", function() {
             let parent = this.parentElement;
+            if(!parent.classList.contains("player-name-highlight")) {
+                return;
+            }
             let playerNames = parent.getElementsByClassName("player-name-text");
             let playerName = playerNames[0];
             playerName.setAttribute("contenteditable", "true");
