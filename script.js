@@ -213,7 +213,6 @@ let scoreBoard = (() => {
     let playerNames = document.getElementsByClassName("player-name-text");
     Array.from(playerNames).forEach((eachPlayer) => {
         eachPlayer.addEventListener("keydown", function(e) {
-            console.log(e.target.textContent.length);
             if(e.key != "Backspace" && e.target.textContent.length > 13) {
                 e.preventDefault();
             }
