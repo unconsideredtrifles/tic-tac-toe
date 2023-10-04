@@ -3,7 +3,7 @@
 
 A simple tic-tac-toe game with two human players
 
-# Name Highlighting
+## Name Highlighting
 
 The current player's name is highlighted:
 
@@ -11,7 +11,7 @@ The current player's name is highlighted:
 
 ![Player's 2 Turn on Tic-tac-toe Game Screen](example/pictures/player_2_turn.jpg)  
 
-# Editing Player Name
+## Editing Player Name
 
 You can edit the current's player name:
 
@@ -19,7 +19,7 @@ You can edit the current's player name:
 
 ![Player 1's name is being edited](example/pictures/name_edit_2.jpg)
 
-# Result Dialog
+## Result Dialog
 
 Whether either player wins or draws, A modal dialog will be displayed declaring the result. The name of the winner will be displayed if the result is a win:
 
