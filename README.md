@@ -21,7 +21,7 @@ You can edit the current's player name:
 
 ## Result Dialog
 
-Whether either player wins or draws, A modal dialog will be displayed declaring the result. The name of the winner will be displayed if the result is a win:
+Whether either player wins or draws, a modal dialog will be displayed declaring the result. The name of the winner will be displayed if the result is a win:
 
 ![Tic-tac-toe Game Screen Declaring Player 1 as the Winner](example/pictures/win.jpg)
 
